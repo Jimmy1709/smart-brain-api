@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-app.get('/' ,(req,res) => {	res.send(database.user) })
+app.get('/' ,(req,res) => {	res.send('It is Working') })
 app.post('/signin', (req, res) => {signin.handleSignIn(req,res,db,bcrypt)})
 app.post('/register', (req, res) => {register.handleRegister(req,res,db,bcrypt)})
 app.get('/profile/:id', (req ,res) => {profile.handleProfileGet(req,res,db)})
