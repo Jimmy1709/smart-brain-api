@@ -10,12 +10,12 @@ const handleSignIn = (req,res,db,bcrypt) => {
     .then(data => {
       const isValid = bcrypt.compareSync(password, data[0].hash);
       if (isValid) {
-        return db.select('*').from('user')
+        return db.select('*').from('users')
           .where('email', '=', email)
-          .then(users => {
-            res.json(users[0])
+          .then(user => {
+            res.json(user[0])
           })
-          .catch(err => res.status(400).json('unable to get user'))
+          .catch(err => res.status(400).json('unable to get users'))
       } else {
         res.status(400).json('wrong credentials')
       }

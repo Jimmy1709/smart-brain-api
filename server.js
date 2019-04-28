@@ -13,7 +13,7 @@ const db = knex({
   client: 'pg',
   connection: {
     host : 'postgresql-closed-78144',
-    user : 'postgres', 
+    users : 'postgres', 
     password : '',
     database : 'smart-brains'
   }
